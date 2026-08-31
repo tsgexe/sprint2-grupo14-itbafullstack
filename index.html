@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mueblería Hermanos Jota - Muebles de calidad y diseño para tu hogar.">
+    <title>Mueblería Hermanos Jota | Inicio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/views/index.css">
+</head>
+
+<body>
+
+    <!-- Header: Logo y Navegación Principal -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="index.html" class="logo" aria-label="Inicio - Mueblería Hermanos Jota">
+                <div class="logo-circle">
+                    <img src="assets/img/ui/logo.svg" alt="Logo Mueblería Hermanos Jota">
+                </div>
+
+                <span class="logo-text">HERMANOS JOTA</span>
+            </a>
+            <nav class="main-nav" aria-label="Navegación principal">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link active">Inicio</a></li>
+                    <li class="nav-item"><a href="productos.html" class="nav-link">Productos</a></li>
+                    <li class="nav-item"><a href="contacto.html" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Banner Principal -->
+        <section class="hero-banner" aria-label="Banner principal">
+            <div class="hero-container">
+                <!-- Estructura base para el banner principal -->
+                <h1 id="hero-title" class="hero-title">Muebles con historia, creados para alimentar el alma</h1>
+                <p class="hero-description">
+                    El redescubrimiento del diseño artesanal. Piezas atemporales en maderas nativas
+                    y materiales nobles que transforman tus espacios cotidianos.
+                </p>
+                <div class="hero-actions">
+                    <a href="productos.html" class="btn-primary">Descubri nuestros productos</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Productos Destacados -->
+        <section class="featured-products" aria-labelledby="featured-title">
+            <div class="featured-container">
+                <header class="section-header">
+                    <h2 id="featured-title" class="section-title">Productos Destacados</h2>
+                    <p class="section-subtitle">Piezas esenciales seleccionadas por su diseño y artesanía única</p>
+                </header>
+
+                <!-- Contenedor de 4 productos destacados -->
+                <div id="featured-products-grid" class="products-grid">
+                    <article class="product-card">
+                        <div class="product-image-container">
+                            <img src="assets/img/products/aconcagua.png" alt="Mesa de Noche Aconcagua en madera maciza"
+                                class="product-image">
+                        </div>
+                        <div class="product-content">
+                            <span class="product-category">Mesas</span>
+                            <span class="producto-tagline">Madera Certificada FSC • Hecho a Mano</span>
+                            <h3 class="product-title">Mesa de Noche Aconcagua</h3>
+                            <p class="product-price">$145.000</p>
+                            <a href="producto.html" class="product-link" aria-label="Ver detalle de Mesa de Noche Aconcagua">
+                                Ver Detalle
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image-container">
+                            <img src="assets/img/products/araucaria.png" alt="Mesa de centro Araucaria en petiribí"
+                                class="product-image">
+                        </div>
+                        <div class="product-content">
+                            <span class="product-category">Mesas</span>
+                            <span class="producto-tagline">Petiribí Macizo • Sello FSC</span>
+                            <h3 class="product-title">Mesa de Centro Araucaria</h3>
+                            <p class="product-price">$280.000</p>
+                            <a href="producto.html" class="product-link" aria-label="Ver detalle de Mesa de Centro Araucaria">
+                                Ver Detalle
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image-container">
+                            <img src="assets/img/products/belgrano.png" alt="Silla de trabajo Belgrano en madera nativa"
+                                class="product-image">
+                        </div>
+                        <div class="product-content">
+                            <span class="product-category">Sillas</span>
+                            <span class="producto-tagline">Madera FSC • Acabado Natural</span>
+                            <h3 class="product-title">Silla de Trabajo Belgrano</h3>
+                            <p class="product-price">$320.000</p>
+                            <a href="producto.html" class="product-link" aria-label="Ver detalle de Silla de Trabajo Belgrano">
+                                Ver Detalle
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image-container">
+                            <img src="assets/img/products/patagonia.png"
+                                alt="Sofá Patagonia de 3 cuerpos tapizado en lino" class="product-image">
+                        </div>
+                        <div class="product-content">
+                            <span class="product-category">Sofás</span>
+                            <span class="producto-tagline">Tapizado en Lino • Artesanal</span>
+                            <h3 class="product-title">Sofá Patagonia</h3>
+                            <p class="product-price">$450.000</p>
+                            <a href="producto.html" class="product-link" aria-label="Ver detalle de Sofá Patagonia">
+                                Ver Detalle
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer: Información básica -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-info">
+                <!-- Bloque: Sobre la Mueblería -->
+                <div class="footer-block">
+                    <h3 class="footer-title">Nosotros</h3>
+                    <p class="footer-text">
+                        Desde 1960, en Hermanos Jota creamos piezas de diseño atemporal
+                        en maderas nativas certificadas y acabados naturales, honrando
+                        el oficio artesanal y la vida en el hogar.
+                    </p>
+                </div>
+
+                <!-- Bloque: Dirección y Horarios de Atención -->
+                <div class="footer-block">
+                    <h3 class="footer-title">Visitanos</h3>
+                    <address class="footer-address">
+                        <p class="footer-text">
+                            <strong>Hermanos Jota - Casa Taller:</strong><br>
+                            Av. San Juan 2847<br>
+                            C1232AAB — Barrio de San Cristóbal<br>
+                            Ciudad Autónoma de Buenos Aires<br>
+                            Argentina
+                        </p>
+                        <p class="footer-text">
+                            <strong>Horarios de Atención:</strong><br>
+                            Lunes a Viernes: 10:00 a 19:00 hs<br>
+                            Sábados: 10:00 a 14:00 hs
+                        </p>
+                    </address>
+                </div>
+
+                <!-- Bloque: Información de Contacto -->
+                <div class="footer-block">
+                    <h3 class="footer-title">Contacto</h3>
+                    <ul class="footer-list">
+                        <li class="footer-text">
+                            <strong>Sitio web:</strong> www.hermanosjota.com.ar
+                        </li>
+                        <li class="footer-text">
+                            <strong>Email general:</strong> info@hermanosjota.com.ar
+                        </li>
+                        <li class="footer-text">
+                            <strong>Ventas:</strong> ventas@hermanosjota.com.ar
+                        </li>
+                        <li class="footer-text">
+                            <strong>Instagram:</strong> @hermanosjota_ba
+                        </li>
+                        <li class="footer-text">
+                            <strong>WhatsApp:</strong> +54 11 4567-8900
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Mueblería Hermanos Jota. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
