@@ -1,0 +1,296 @@
+/* ==========================================================================
+   Vista: Detalle de Producto (producto.css)
+   ========================================================================== */
+
+/* Importación de componentes compartidos */
+@import '../components/header.css';
+@import '../components/footer.css';
+
+/* ==========================================================================
+   Estructura General y Contenedor
+   ========================================================================== */
+.product-page-main {
+   padding: clamp(1.5rem, 4vw, 3rem) clamp(1rem, 4vw, 2.5rem) clamp(3rem, 6vw, 5rem);
+   flex-grow: 1;
+}
+
+.product-page-container {
+   width: 100%;
+   max-width: 1200px;
+   margin: 0 auto;
+}
+
+/* Miga de Pan (Breadcrumbs) */
+.breadcrumbs {
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   gap: 0.5rem;
+   font-family: var(--font-primary);
+   font-size: 0.85rem;
+   margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+   color: rgba(45, 36, 34, 0.6);
+}
+
+.breadcrumb-link {
+   text-decoration: none;
+   color: var(--color-texto-oscuro);
+   transition: color 0.2s ease;
+}
+
+.breadcrumb-link:hover {
+   color: var(--color-siena-tostado);
+}
+
+.breadcrumb-separator {
+   color: rgba(45, 36, 34, 0.35);
+}
+
+.breadcrumb-current {
+   color: var(--color-siena-tostado);
+   font-weight: 500;
+}
+
+/* ==========================================================================
+   Layout Principal: Flexbox (Mobile First)
+   ========================================================================== */
+.product-detail-layout {
+   display: flex;
+   flex-direction: column;
+   gap: clamp(2rem, 4vw, 3.5rem);
+   width: 100%;
+}
+
+/* Columna Izquierda: Imagen Grande del Producto */
+.product-media-column {
+   width: 100%;
+}
+
+.product-main-image-container {
+   width: 100%;
+   aspect-ratio: 1 / 1;
+   background-color: var(--color-blanco);
+   border: 1px solid rgba(45, 36, 34, 0.08);
+   border-radius: 6px;
+   overflow: hidden;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   box-shadow: 0 4px 20px rgba(45, 36, 34, 0.04);
+}
+
+.product-main-image {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   display: block;
+   transition: transform 0.4s ease;
+}
+
+.product-main-image-container:hover .product-main-image {
+   transform: scale(1.02);
+}
+
+/* Columna Derecha: Información y Acciones */
+.product-info-column {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   gap: clamp(1.25rem, 2.5vw, 1.75rem);
+}
+
+/* ==========================================================================
+   Cabecera de Producto
+   ========================================================================== */
+.product-header {
+   display: flex;
+   flex-direction: column;
+   gap: 0.35rem;
+}
+
+.product-category {
+   font-family: var(--font-primary);
+   font-weight: 300;
+   font-size: 0.8rem;
+   text-transform: uppercase;
+   letter-spacing: 0.08em;
+   color: var(--color-siena-tostado);
+}
+
+.producto-tagline {
+   display: block;
+   font-family: var(--font-primary);
+   font-weight: 500;
+   font-size: 0.75rem;
+   text-transform: uppercase;
+   letter-spacing: 0.05em;
+   color: var(--color-verde-salvia);
+   margin-top: 2px;
+}
+
+.product-title-detail {
+   font-family: var(--font-secondary);
+   font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+   font-weight: 700;
+   color: var(--color-siena-tostado);
+   text-transform: uppercase;
+   letter-spacing: 0.08em;
+   line-height: 1.2;
+   margin: 0.35rem 0;
+}
+
+.product-price-detail {
+   font-family: var(--font-primary);
+   font-size: clamp(1.5rem, 2.5vw, 2rem);
+   font-weight: 700;
+   color: var(--color-siena-tostado);
+   margin: 0;
+}
+
+/* ==========================================================================
+   Bloques de Descripción y Especificaciones
+   ========================================================================== */
+.product-block {
+   display: flex;
+   flex-direction: column;
+   gap: 0.6rem;
+}
+
+.product-block-title {
+   font-family: var(--font-secondary);
+   font-size: 1.15rem;
+   font-weight: 700;
+   color: var(--color-siena-tostado);
+   text-transform: uppercase;
+   letter-spacing: 0.06em;
+   border-bottom: 1px solid rgba(160, 82, 45, 0.2);
+   padding-bottom: 0.35rem;
+   margin: 0;
+}
+
+.product-description-text {
+   font-family: var(--font-primary);
+   font-size: 0.95rem;
+   line-height: 1.7;
+   color: var(--color-texto-oscuro);
+}
+
+.product-specs-list {
+   list-style: none;
+   padding: 0;
+   margin: 0;
+   display: flex;
+   flex-direction: column;
+   gap: 0.5rem;
+}
+
+.spec-item {
+   font-family: var(--font-primary);
+   font-size: 0.9rem;
+   line-height: 1.5;
+   color: var(--color-texto-oscuro);
+}
+
+.spec-item strong {
+   font-weight: 600;
+   color: var(--color-texto-oscuro);
+}
+
+/* ==========================================================================
+   Acciones y Botón de Compra
+   ========================================================================== */
+.product-actions-block {
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   gap: 1rem;
+   padding-top: 0.5rem;
+}
+
+.quantity-selector {
+   display: flex;
+   align-items: center;
+   gap: 0.5rem;
+}
+
+.quantity-label {
+   font-family: var(--font-primary);
+   font-weight: 500;
+   font-size: 0.9rem;
+   color: var(--color-texto-oscuro);
+}
+
+.quantity-input {
+   width: 60px;
+   padding: 0.75rem 0.5rem;
+   border: 1px solid rgba(45, 36, 34, 0.2);
+   border-radius: 4px;
+   font-family: var(--font-primary);
+   font-size: 1rem;
+   font-weight: 500;
+   text-align: center;
+   background-color: var(--color-blanco);
+   color: var(--color-texto-oscuro);
+   transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.quantity-input:focus {
+   outline: none;
+   border-color: var(--color-siena-tostado);
+   box-shadow: 0 0 0 2px rgba(160, 82, 45, 0.15);
+}
+
+.btn-purchase {
+   flex: 1;
+   min-width: 200px;
+   border: none;
+   cursor: pointer;
+   background-color: var(--color-siena-tostado);
+   color: var(--color-blanco);
+   font-family: var(--font-primary);
+   font-weight: 500;
+   font-size: 0.9rem;
+   text-transform: uppercase;
+   letter-spacing: 0.08em;
+   padding: 0.95rem 2rem;
+   border-radius: 4px;
+   transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-purchase:hover {
+   background-color: var(--color-vara-oro);
+   transform: translateY(-2px);
+   box-shadow: 0 4px 12px rgba(212, 164, 55, 0.25);
+}
+
+.btn-purchase:active {
+   transform: translateY(0);
+}
+
+.product-shipping-note {
+   padding-top: 0.25rem;
+   border-top: 1px dashed rgba(45, 36, 34, 0.15);
+}
+
+/* ==========================================================================
+   Media Queries (Desktop >= 768px): Distribución Horizontal 2 Columnas
+   ========================================================================== */
+@media (min-width: 768px) {
+   .product-detail-layout {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: clamp(2rem, 5vw, 4.5rem);
+   }
+
+   .product-media-column {
+      flex: 1 1 50%;
+      max-width: 50%;
+      position: sticky;
+      top: 100px;
+   }
+
+   .product-info-column {
+      flex: 1 1 50%;
+      max-width: 50%;
+   }
+}

@@ -1,0 +1,161 @@
+/* ==========================================================================
+   Vista: Inicio (index.css)
+   ========================================================================== */
+
+/* Importación de componentes compartidos */
+@import '../components/header.css';
+@import '../components/product-card.css';
+@import '../components/footer.css';
+
+/* ==========================================================================
+   Hero Banner Principal
+   ========================================================================== */
+.hero-banner {
+   position: relative;
+   background-image: linear-gradient(rgba(45, 36, 34, 0.6), rgba(45, 36, 34, 0.6)),
+      url('../../assets/img/hero-banner.png');
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+
+   min-height: clamp(420px, 60vh, 650px);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+
+   padding: clamp(3rem, 6vw, 6rem) clamp(1.5rem, 4vw, 3rem);
+   color: var(--color-blanco);
+}
+
+.hero-container {
+   max-width: 800px;
+   margin: 0 auto;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 1.25rem;
+}
+
+.hero-title {
+   font-size: clamp(2rem, 5vw, 3.2rem);
+   font-weight: 700;
+   line-height: 1.2;
+   color: var(--color-blanco);
+   text-transform: uppercase;
+   letter-spacing: 0.1em;
+}
+
+.hero-description {
+   font-size: clamp(1rem, 2vw, 1.25rem);
+   max-width: 650px;
+   color: var(--color-alabastro-calido);
+   line-height: 1.6;
+}
+
+.btn-primary {
+   display: inline-block;
+   background-color: var(--color-siena-tostado);
+   color: var(--color-blanco);
+   text-decoration: none;
+   font-family: var(--font-primary);
+   font-weight: 500;
+   text-transform: uppercase;
+   letter-spacing: 0.08em;
+   padding: 0.85rem 1.8rem;
+   border-radius: 4px;
+   margin-top: 0.5rem;
+   transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+   background-color: var(--color-vara-oro);
+   transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   Sección: Productos Destacados (Grilla Editorial con Flexbox)
+   ========================================================================== */
+.featured-products {
+   padding: clamp(3.5rem, 6vw, 5.5rem) clamp(1rem, 4vw, 2.5rem);
+}
+
+.featured-container {
+   width: 100%;
+   max-width: 1200px;
+   margin: 0 auto;
+   display: flex;
+   flex-direction: column;
+   gap: clamp(2rem, 4vw, 3rem);
+}
+
+.section-header {
+   text-align: center;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 0.5rem;
+}
+
+.section-title {
+   font-family: var(--font-secondary);
+   font-size: clamp(1.8rem, 4vw, 2.4rem);
+   font-weight: 700;
+   color: var(--color-siena-tostado);
+   text-transform: uppercase;
+   letter-spacing: 0.1em;
+   margin: 0;
+}
+
+.section-subtitle {
+   font-family: var(--font-primary);
+   font-size: clamp(0.95rem, 1.8vw, 1.05rem);
+   font-weight: 300;
+   letter-spacing: 0.02em;
+   color: var(--color-texto-oscuro);
+   max-width: 550px;
+   margin: 0 auto;
+}
+
+/* Micro-etiqueta de certificación y sustentabilidad */
+.producto-tagline {
+   display: block;
+   font-family: var(--font-primary);
+   font-weight: 500;
+   font-size: 0.75rem;
+   text-transform: uppercase;
+   letter-spacing: 0.05em;
+   color: var(--color-verde-salvia); /* #87A96B */
+   margin-bottom: 4px;
+}
+
+/* Grilla con Flexbox (Mobile First) */
+.products-grid {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   gap: 1.5rem;
+   width: 100%;
+}
+
+/* Mobile First: 1 columna encimada en pantallas pequeñas (< 576px) */
+.products-grid .product-card {
+   flex: 1 1 100%;
+   max-width: 100%;
+}
+
+/* Tablet (>= 576px): 2 columnas */
+@media (min-width: 576px) {
+   .products-grid .product-card {
+      flex: 1 1 calc(50% - 0.75rem);
+      max-width: calc(50% - 0.75rem);
+   }
+}
+
+/* Desktop (>= 992px): 4 columnas alineadas horizontalmente */
+@media (min-width: 992px) {
+   .products-grid .product-card {
+      flex: 1 1 calc(25% - 1.125rem);
+      max-width: calc(25% - 1.125rem);
+   }
+}

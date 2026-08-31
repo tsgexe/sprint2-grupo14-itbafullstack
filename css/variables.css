@@ -1,0 +1,52 @@
+:root {
+    --font-primary: 'Inter', sans-serif;
+    --font-secondary: 'Playfair Display', serif;
+
+    --color-siena-tostado: #A0522D;
+    --color-verde-salvia: #87A96B;
+    --color-alabastro-calido: #F5E6D3;
+    --color-vara-oro: #D4A437;
+    --color-rosa-polvoriento: #C47A6D;
+    --color-blanco: #FFFFFF;
+    --color-texto-oscuro: #2D2422;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--color-alabastro-calido);
+    color: var(--color-texto-oscuro);
+    font-family: var(--font-primary);
+    font-weight: 400;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Tipografía y Color para Encabezados (Manual 2026) */
+h1,
+h2,
+h3 {
+    font-family: var(--font-secondary);
+    color: var(--color-siena-tostado);
+}
+
+h1,
+h2 {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/* Leyendas y notas secundarias (Manual 2026) */
+.text-caption,
+.text-note {
+    font-weight: 300;
+    letter-spacing: 0.02em;
+}

@@ -1,0 +1,156 @@
+/* ==========================================================================
+   Componente: Header (Mobile First)
+   ========================================================================== */
+
+.main-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--color-blanco);
+    padding: clamp(0.75rem, 2vw, 1.25rem) clamp(1rem, 4vw, 2.5rem);
+    border-bottom: 1px solid rgba(45, 36, 34, 0.08);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Mobile First: en celulares se apila en 2 filas limpias */
+.header-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+/* Espacio reservado para el Logotipo */
+.logo {
+    display: inline-flex;
+    align-items: center;
+    min-width: 120px;
+    text-decoration: none;
+    color: var(--color-texto-oscuro);
+    gap: 12px;
+}
+
+/* Plantilla para imagen del logo cuando se agregue */
+.logo img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 48px;
+    display: block;
+    object-fit: contain;
+}
+
+/* Texto del logo */
+.logo-text {
+    font-family: var(--font-secondary);
+    color: var(--color-siena-tostado);
+    font-size: 1.5em;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    line-height: 1.2;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+}
+
+.logo:hover .logo-text {
+    color: var(--color-vara-oro);
+}
+
+.logo-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Dimensiones fluidas y responsivas para mantener la geometría circular */
+    width: clamp(48px, 6vw, 60px);
+    height: clamp(48px, 6vw, 60px);
+
+    /* Borde circular con la paleta de marca */
+    border: 1.5px solid var(--color-siena-tostado);
+    border-radius: 50%;
+
+    /* Fondo y espaciado interno de protección */
+    background-color: var(--color-alabastro-calido);
+    padding: 8px;
+    box-sizing: border-box;
+
+    /* Transición suave para interactividad */
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.logo:hover .logo-circle {
+    transform: scale(1.03);
+    border-color: var(--color-vara-oro);
+}
+
+/* ==========================================================================
+   Navegación Principal
+   ========================================================================== */
+.main-nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    gap: clamp(0.75rem, 3vw, 1.25rem);
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    display: inline-flex;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--color-texto-oscuro);
+    font-family: var(--font-primary);
+    font-weight: 500;
+    font-size: clamp(0.9rem, 1.5vw, 1.05rem);
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    position: relative;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: var(--color-siena-tostado);
+}
+
+.nav-link.active {
+    color: var(--color-siena-tostado);
+    font-weight: 700;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0.75rem;
+    right: 0.75rem;
+    height: 2px;
+    background-color: var(--color-siena-tostado);
+    border-radius: 2px;
+}
+
+/* ==========================================================================
+   Media Queries (Desktop >= 768px)
+   ========================================================================== */
+@media (min-width: 768px) {
+    .header-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .nav-list {
+        gap: 1.75rem;
+    }
+}

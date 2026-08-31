@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Detalle de producto - Mueblería Hermanos Jota.">
+    <title>Mueblería Hermanos Jota | Producto</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/views/producto.css">
+</head>
+
+<body>
+
+    <!-- Header: Logo y Navegación Principal -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="index.html" class="logo" aria-label="Inicio - Mueblería Hermanos Jota">
+                <div class="logo-circle">
+                    <img src="assets/img/ui/logo.svg" alt="Logo Mueblería Hermanos Jota">
+                </div>
+                <span class="logo-text">HERMANOS JOTA</span>
+            </a>
+            <nav class="main-nav" aria-label="Navegación principal">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li class="nav-item"><a href="productos.html" class="nav-link">Productos</a></li>
+                    <li class="nav-item"><a href="contacto.html" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content: Detalle de Producto -->
+    <main class="product-page-main">
+        <div class="product-page-container">
+            <!-- Miga de pan / Breadcrumb -->
+            <nav class="breadcrumbs" aria-label="Ruta de navegación">
+                <a href="index.html" class="breadcrumb-link">Inicio</a>
+                <span class="breadcrumb-separator">/</span>
+                <a href="productos.html" class="breadcrumb-link">Productos</a>
+                <span class="breadcrumb-separator">/</span>
+                <span class="breadcrumb-current" aria-current="page">Mesa de Noche Aconcagua</span>
+            </nav>
+
+            <!-- Sección principal de producto -->
+            <section class="product-detail-section" aria-labelledby="product-title">
+                <div class="product-detail-layout">
+                    <!-- Columna Izquierda: Imagen Grande del Producto -->
+                    <div class="product-media-column">
+                        <div class="product-main-image-container">
+                            <img src="assets/img/products/aconcagua.png"
+                                alt="Mesa de Noche Aconcagua fabricada en madera maciza de petiribí"
+                                class="product-main-image" id="main-product-image">
+                        </div>
+                    </div>
+
+                    <!-- Columna Derecha: Información, Descripción, Detalles y Compra -->
+                    <div class="product-info-column">
+                        <!-- Cabecera de Producto -->
+                        <header class="product-header">
+                            <span class="product-category">Mesas de Noche</span>
+                            <span class="producto-tagline">Madera Certificada FSC • Hecho a Mano</span>
+                            <h1 id="product-title" class="product-title-detail">Mesa de Noche Aconcagua</h1>
+                            <p class="product-price-detail">$145.000</p>
+                        </header>
+
+                        <!-- Sección de Descripción -->
+                        <section class="product-block product-description-block" aria-labelledby="desc-heading">
+                            <h2 id="desc-heading" class="product-block-title">Descripción</h2>
+                            <p class="product-description-text">
+                                La Mesa de Noche Aconcagua conjuga la nobleza de las maderas nativas seleccionadas con
+                                líneas contemporáneas de impronta escandinava. Su cajón con correderas ocultas de cierre
+                                suave y su estante inferior ofrecen una solución de guardado funcional y minimalista
+                                para el dormitorio. Cada unidad es trabajada artesanalmente preservando las vetas
+                                naturales y singulares de la madera.
+                            </p>
+                        </section>
+
+                        <!-- Sección de Detalles y Especificaciones -->
+                        <section class="product-block product-specs-block" aria-labelledby="specs-heading">
+                            <h2 id="specs-heading" class="product-block-title">Detalles y Especificaciones</h2>
+                            <ul class="product-specs-list">
+                                <li class="spec-item">
+                                    <strong>Material:</strong> Petiribí macizo de fuentes sustentables con sello FSC.
+                                </li>
+                                <li class="spec-item">
+                                    <strong>Dimensiones:</strong> 50 cm (ancho) x 40 cm (profundidad) x 55 cm (alto).
+                                </li>
+                                <li class="spec-item">
+                                    <strong>Acabado:</strong> Laca poliuretánica mate ecológica al agua con protección
+                                    UV.
+                                </li>
+                                <li class="spec-item">
+                                    <strong>Origen:</strong> Hecho a mano en Casa Taller, San Cristóbal, Buenos Aires.
+                                </li>
+                                <li class="spec-item">
+                                    <strong>Garantía:</strong> 5 años en estructura y ensamble de carpintería artesanal.
+                                </li>
+                            </ul>
+                        </section>
+
+                        <!-- Acciones y Botón de Compra -->
+                        <div class="product-actions-block">
+                            <div class="quantity-selector">
+                                <label for="product-quantity" class="quantity-label">Cantidad:</label>
+                                <input type="number" id="product-quantity" class="quantity-input" value="1" min="1"
+                                    max="10" aria-label="Cantidad de unidades">
+                            </div>
+                            <button type="button" class="btn-primary btn-purchase" id="btn-buy"
+                                aria-label="Comprar Mesa de Noche Aconcagua">
+                                Comprar Ahora
+                            </button>
+                        </div>
+
+                        <!-- Nota de Envío y Confianza -->
+                        <footer class="product-shipping-note">
+                            <p class="text-note">
+                                🚚 Envíos asegurados a todo el país • Embalaje especial para piezas de diseño
+                            </p>
+                        </footer>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer: Información básica -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-info">
+                <!-- Bloque: Sobre la Mueblería -->
+                <div class="footer-block">
+                    <h3 class="footer-title">Nosotros</h3>
+                    <p class="footer-text">
+                        Desde 1960, en Hermanos Jota creamos piezas de diseño atemporal
+                        en maderas nativas certificadas y acabados naturales, honrando
+                        el oficio artesanal y la vida en el hogar.
+                    </p>
+                </div>
+
+                <!-- Bloque: Dirección y Horarios de Atención -->
+                <div class="footer-block">
+                    <h3 class="footer-title">Visitanos</h3>
+                    <address class="footer-address">
+                        <p class="footer-text">
+                            <strong>Hermanos Jota - Casa Taller:</strong><br>
+                            Av. San Juan 2847<br>
+                            C1232AAB — Barrio de San Cristóbal<br>
+                            Ciudad Autónoma de Buenos Aires<br>
+                            Argentina
+                        </p>
+                        <p class="footer-text">
+                            <strong>Horarios de Atención:</strong><br>
+                            Lunes a Viernes: 10:00 a 19:00 hs<br>
+                            Sábados: 10:00 a 14:00 hs
+                        </p>
+                    </address>
+                </div>
+
+                <!-- Bloque: Información de Contacto -->
+                <div class="footer-block">
+                    <h3 class="footer-title">Contacto</h3>
+                    <ul class="footer-list">
+                        <li class="footer-text">
+                            <strong>Sitio web:</strong> www.hermanosjota.com.ar
+                        </li>
+                        <li class="footer-text">
+                            <strong>Email general:</strong> info@hermanosjota.com.ar
+                        </li>
+                        <li class="footer-text">
+                            <strong>Ventas:</strong> ventas@hermanosjota.com.ar
+                        </li>
+                        <li class="footer-text">
+                            <strong>Instagram:</strong> @hermanosjota_ba
+                        </li>
+                        <li class="footer-text">
+                            <strong>WhatsApp:</strong> +54 11 4567-8900
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Mueblería Hermanos Jota. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
