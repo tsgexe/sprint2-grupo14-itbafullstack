@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ponte en contacto con Mueblería Hermanos Jota. Consultas, presupuestos y atención personalizada.">
+    <meta name="description"
+        content="Ponte en contacto con Mueblería Hermanos Jota. Consultas, presupuestos y atención personalizada.">
     <title>Mueblería Hermanos Jota | Contacto</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,9 +40,53 @@
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Estructura base para el formulario e información de contacto -->
+    <!-- Main Content: Sección de Contacto -->
+    <main class="contact-page-main">
+        <div class="contact-page-container">
+            <!-- Encabezado de la página de contacto -->
+            <header class="contact-header">
+                <span class="contact-tagline">Atención y Asesoramiento</span>
+                <h1 id="contact-title" class="contact-title">Contacto</h1>
+                <p class="contact-subtitle">
+                    Ponete en contacto con nosotros. Dejanos tu mensaje para consultas, presupuestos a medida o atención personalizada.
+                </p>
+            </header>
+
+            <!-- Contenedor del Formulario de Contacto -->
+            <div class="contact-layout">
+                <section class="contact-form-section" aria-labelledby="form-title">
+                    <h2 id="form-title" class="form-title">Envianos un mensaje</h2>
+
+                    <form action="#" method="POST" class="contact-form">
+                        <!-- Campo: Nombre -->
+                        <div class="form-group">
+                            <label for="nombre" class="form-label">Nombre y Apellido</label>
+                            <input type="text" id="nombre" name="nombre" class="form-input"
+                                placeholder="Tu nombre completo" required autocomplete="name">
+                        </div>
+
+                        <!-- Campo: Email -->
+                        <div class="form-group">
+                            <label for="email" class="form-label">Correo Electrónico</label>
+                            <input type="email" id="email" name="email" class="form-input"
+                                placeholder="ejemplo@correo.com" required autocomplete="email">
+                        </div>
+
+                        <!-- Campo: Mensaje -->
+                        <div class="form-group">
+                            <label for="mensaje" class="form-label">Mensaje</label>
+                            <textarea id="mensaje" name="mensaje" class="form-textarea" rows="5"
+                                placeholder="Escribí tu consulta o mensaje aquí..." required></textarea>
+                        </div>
+
+                        <!-- Botón de Envío -->
+                        <div class="form-actions">
+                            <button type="submit" class="btn-primary btn-submit">Enviar Mensaje</button>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </div>
     </main>
 
     <!-- Footer: Información básica -->
