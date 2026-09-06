@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Catálogo completo de muebles de diseño y artesanales - Mueblería Hermanos Jota.">
+    <meta name="description" content="Colección de muebles atemporales en maderas nativas certificadas y acabados naturales. Piezas creadas para alimentar el alma - Mueblería Hermanos Jota.">
     <title>Mueblería Hermanos Jota | Productos</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,13 +35,297 @@
                     <li class="nav-item"><a href="productos.html" class="nav-link active">Productos</a></li>
                     <li class="nav-item"><a href="contacto.html" class="nav-link">Contacto</a></li>
                 </ul>
+                <button class="btn-cart" id="btn-cart-toggle" aria-label="Abrir carrito">
+                    <svg class="cart-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    <span class="cart-badge" id="cart-badge">0</span>
+                </button>
             </nav>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Estructura base para el catálogo de productos -->
+    <!-- Main Content: Catálogo de Productos -->
+    <main class="catalog-main">
+        <div class="catalog-container">
+            <!-- Miga de pan / Breadcrumb -->
+            <nav class="breadcrumbs" aria-label="Ruta de navegación">
+                <a href="index.html" class="breadcrumb-link">Inicio</a>
+                <span class="breadcrumb-separator">/</span>
+                <span class="breadcrumb-current" aria-current="page">Productos</span>
+            </nav>
+
+            <!-- Encabezado de la Colección -->
+            <header class="catalog-header">
+                <h1 class="catalog-title">Colección de Muebles</h1>
+                <p class="catalog-subtitle">
+                    El redescubrimiento del diseño artesanal. Cada pieza es creada en maderas nativas
+                    seleccionadas y tratada con acabados sustentables para enriquecer los espacios de tu hogar.
+                </p>
+            </header>
+
+            <!-- Barra de Filtros y Control -->
+            <section class="catalog-toolbar" aria-label="Filtros y búsqueda del catálogo">
+                <div class="filter-group" role="group" aria-label="Filtrar por categoría">
+                    <button type="button" class="filter-btn active" data-category="all">Todos</button>
+                    <button type="button" class="filter-btn" data-category="Living">Living</button>
+                    <button type="button" class="filter-btn" data-category="Comedor">Comedor</button>
+                    <button type="button" class="filter-btn" data-category="Estudio y Oficina">Estudio y Oficina</button>
+                    <button type="button" class="filter-btn" data-category="Dormitorio">Dormitorio</button>
+                </div>
+                <div class="toolbar-actions">
+                    <div class="search-box">
+                        <label for="catalog-search" class="visually-hidden">Buscar en el catálogo</label>
+                        <div class="search-input-wrapper">
+                            <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                            <input type="search" id="catalog-search" class="catalog-search-input" placeholder="Buscar mueble..." autocomplete="off" aria-label="Buscar muebles en el catálogo">
+                            <button type="button" class="search-clear-btn" id="search-clear" aria-label="Limpiar búsqueda" title="Limpiar búsqueda" hidden>&times;</button>
+                        </div>
+                    </div>
+                    <div class="catalog-status">
+                        <span class="catalog-count">Mostrando <strong>11 piezas</strong> exclusivas</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Grilla del Catálogo de Productos -->
+            <section class="catalog-grid-section" aria-label="Listado de productos">
+                <div class="catalog-grid">
+                    <!-- 1. Aparador Uspallata -->
+                    <article class="product-card" data-id="uspallata" data-category="Comedor">
+                        <div class="product-image-container">
+                            <img src="assets/img/products/uspallata.png" alt="Aparador Uspallata - Mueblería Hermanos Jota"
+                                class="product-image" loading="lazy">
+                        </div>
+                        <div class="product-content">
+                            <span class="product-category">Comedor</span>
+                            <span class="producto-tagline">Madera FSC®</span>
+                            <h2 class="product-title">Aparador Uspallata</h2>
+                            <p class="product-price">$850.000</p>
+                            <a href="producto.html?id=uspallata" class="product-link" aria-label="Ver detalle de Aparador Uspallata">
+                                Ver Detalle
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- 2. Biblioteca Recoleta -->
+                    <article class="product-card" data-id="recoleta" data-category="Estudio y Oficina">
+                        <div class="product-image-container">
+                            <img src="assets/img/products/recoleta.png" alt="Biblioteca Recoleta - Mueblería Hermanos Jota"
+                                class="product-image" loading="lazy">
+                        </div>
+                        <div class="product-content">
+                            <span class="product-category">Estudio y Oficina</span>
+                            <span class="producto-tagline">Madera FSC®</span>
+                            <h2 class="product-title">Biblioteca Recoleta</h2>
+                            <p class="product-price">$680.000</p>
+                            <a href="producto.html?id=recoleta" class="product-link" aria-label="Ver detalle de Biblioteca Recoleta">
+                                Ver Detalle
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- 3. Butaca Mendoza -->
+                    <article class="product-card" data-id="mendoza" data-category="Living">
+                        <div class="product-image-container">
+                            <img src="assets/img/products/mendoza.png" alt="Butaca Mendoza - Mueblería Hermanos Jota"
+                                class="product-image" loading="lazy">
+                        </div>
+                        <div class="product-content">
+                            <span class="product-category">Living</span>
+                            <span class="producto-tagline">Madera FSC®</span>
+                            <h2 class="product-title">Butaca Mendoza</h2>
+                            <p class="product-price">$743.000</p>
+                            <a href="producto.html?id=mendoza" class="product-link" aria-label="Ver detalle de Butaca Mendoza">
+                                Ver Detalle
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- 4. Sillón Copacabana -->
+                    <article class="product-card" data-id="copacabana" data-category="Living">
+                        <div class="product-image-container">
+                            <img src="assets/img/products/copacabana.png"
+                                alt="Sillón Copacabana - Mueblería Hermanos Jota" class="product-image" loading="lazy">
+                        </div>
+                        <div class="product-content">
+                            <span class="product-category">Living</span>
+                            <span class="producto-tagline">Madera FSC®</span>
+                            <h2 class="product-title">Sillón Copacabana</h2>
+                            <p class="product-price">$827.000</p>
+                            <a href="producto.html?id=copacabana" class="product-link" aria-label="Ver detalle de Sillón Copacabana">
+                                Ver Detalle
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- 5. Mesa de Noche Aconcagua -->
+                    <article class="product-card" data-id="aconcagua" data-category="Dormitorio">
+                        <div class="product-image-container">
+                            <img src="assets/img/products/aconcagua.png" alt="Mesa de Noche Aconcagua - Mueblería Hermanos Jota"
+                                class="product-image" loading="lazy">
+                        </div>
+                        <div class="product-content">
+                            <span class="product-category">Dormitorio</span>
+                            <span class="producto-tagline">Madera FSC®</span>
+                            <h2 class="product-title">Mesa de Noche Aconcagua</h2>
+                            <p class="product-price">$768.000</p>
+                            <a href="producto.html?id=aconcagua" class="product-link" aria-label="Ver detalle de Mesa de Noche Aconcagua">
+                                Ver Detalle
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- 6. Sofá Patagonia -->
+                    <article class="product-card" data-id="patagonia" data-category="Living">
+                        <div class="product-image-container">
+                            <img src="assets/img/products/patagonia.png"
+                                alt="Sofá Patagonia - Mueblería Hermanos Jota" class="product-image" loading="lazy">
+                        </div>
+                        <div class="product-content">
+                            <span class="product-category">Living</span>
+                            <span class="producto-tagline">Madera FSC®</span>
+                            <h2 class="product-title">Sofá Patagonia</h2>
+                            <p class="product-price">$1.344.000</p>
+                            <a href="producto.html?id=patagonia" class="product-link" aria-label="Ver detalle de Sofá Patagonia">
+                                Ver Detalle
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- 7. Mesa Comedor Pampa -->
+                    <article class="product-card" data-id="pampa" data-category="Comedor">
+                        <div class="product-image-container">
+                            <img src="assets/img/products/pampa.png"
+                                alt="Mesa Comedor Pampa - Mueblería Hermanos Jota" class="product-image" loading="lazy">
+                        </div>
+                        <div class="product-content">
+                            <span class="product-category">Comedor</span>
+                            <span class="producto-tagline">Madera FSC®</span>
+                            <h2 class="product-title">Mesa Comedor Pampa</h2>
+                            <p class="product-price">$810.000</p>
+                            <a href="producto.html?id=pampa" class="product-link" aria-label="Ver detalle de Mesa Comedor Pampa">
+                                Ver Detalle
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- 8. Sillas Cordoba -->
+                    <article class="product-card" data-id="cordoba" data-category="Comedor">
+                        <div class="product-image-container">
+                            <img src="assets/img/products/cordoba.png"
+                                alt="Sillas Cordoba - Mueblería Hermanos Jota" class="product-image" loading="lazy">
+                        </div>
+                        <div class="product-content">
+                            <span class="product-category">Comedor</span>
+                            <span class="producto-tagline">Madera FSC®</span>
+                            <h2 class="product-title">Sillas Cordoba</h2>
+                            <p class="product-price">$673.000</p>
+                            <a href="producto.html?id=cordoba" class="product-link" aria-label="Ver detalle de Sillas Cordoba">
+                                Ver Detalle
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- 9. Escritorio Costa -->
+                    <article class="product-card" data-id="costa" data-category="Estudio y Oficina">
+                        <div class="product-image-container">
+                            <img src="assets/img/products/costa.png"
+                                alt="Escritorio Costa - Mueblería Hermanos Jota" class="product-image" loading="lazy">
+                        </div>
+                        <div class="product-content">
+                            <span class="product-category">Estudio y Oficina</span>
+                            <span class="producto-tagline">Madera FSC®</span>
+                            <h2 class="product-title">Escritorio Costa</h2>
+                            <p class="product-price">$924.000</p>
+                            <a href="producto.html?id=costa" class="product-link" aria-label="Ver detalle de Escritorio Costa">
+                                Ver Detalle
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- 10. Silla de Trabajo Belgrano -->
+                    <article class="product-card" data-id="belgrano" data-category="Estudio y Oficina">
+                        <div class="product-image-container">
+                            <img src="assets/img/products/belgrano.png" alt="Silla de Trabajo Belgrano - Mueblería Hermanos Jota"
+                                class="product-image" loading="lazy">
+                        </div>
+                        <div class="product-content">
+                            <span class="product-category">Estudio y Oficina</span>
+                            <span class="producto-tagline">Madera FSC® - Ergonomía europea EN 1335</span>
+                            <h2 class="product-title">Silla de Trabajo Belgrano</h2>
+                            <p class="product-price">$546.000</p>
+                            <a href="producto.html?id=belgrano" class="product-link" aria-label="Ver detalle de Silla de Trabajo Belgrano">
+                                Ver Detalle
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- 11. Mesa de Centro Araucaria -->
+                    <article class="product-card" data-id="araucaria" data-category="Living">
+                        <div class="product-image-container">
+                            <img src="assets/img/products/araucaria.png" alt="Mesa de Centro Araucaria - Mueblería Hermanos Jota"
+                                class="product-image" loading="lazy">
+                        </div>
+                        <div class="product-content">
+                            <span class="product-category">Living</span>
+                            <span class="producto-tagline">Madera FSC®</span>
+                            <h2 class="product-title">Mesa de Centro Araucaria</h2>
+                            <p class="product-price">$649.000</p>
+                            <a href="producto.html?id=araucaria" class="product-link" aria-label="Ver detalle de Mesa de Centro Araucaria">
+                                Ver Detalle
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Sección de Compromiso Artesanal / Beneficios -->
+            <section class="catalog-features" aria-label="Compromiso Hermanos Jota">
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon-wrapper feature-icon-salvia" aria-hidden="true">
+                            <svg class="feature-svg" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path>
+                                <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
+                            </svg>
+                        </div>
+                        <h2 class="feature-title">Maderas Certificadas</h2>
+                        <p class="feature-description">
+                            Certificación FSC con prioridad en maderas nativas responsables como algarrobo, quebracho y caldén.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon-wrapper feature-icon-siena" aria-hidden="true">
+                            <svg class="feature-svg" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                            </svg>
+                        </div>
+                        <h2 class="feature-title">Oficio Artesanal</h2>
+                        <p class="feature-description">
+                            Piezas creadas con ensamble tradicional y acabados de bajo COV en nuestra Casa Taller desde 1960.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon-wrapper feature-icon-oro" aria-hidden="true">
+                            <svg class="feature-svg" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                <path d="m9 12 2 2 4-4"></path>
+                            </svg>
+                        </div>
+                        <h2 class="feature-title">Garantía Herencia Viva</h2>
+                        <p class="feature-description">
+                            10 años en estructura y 5 años en acabados. Servicio de restauración y hasta 40% en recompra garantizada.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
 
     <!-- Footer: Información básica -->
@@ -106,6 +390,32 @@
         </div>
     </footer>
 
+    <!-- Componente Global: Overlay y Drawer del Carrito -->
+    <div class="cart-overlay" id="cart-overlay" aria-hidden="true"></div>
+    <aside class="cart-drawer" id="cart-drawer" role="dialog" aria-labelledby="cart-drawer-title" aria-modal="true" aria-hidden="true">
+        <div class="cart-header">
+            <div class="cart-header-title-wrap">
+                <h2 id="cart-drawer-title" class="cart-title">Tu Selección</h2>
+                <span class="cart-header-count" id="cart-header-count">(0)</span>
+            </div>
+            <button type="button" class="cart-close-btn" id="btn-cart-close" aria-label="Cerrar carrito">&times;</button>
+        </div>
+        <div class="cart-items-container" id="cart-items-container"></div>
+        <div class="cart-footer" id="cart-footer">
+            <div class="cart-subtotal-row">
+                <span class="cart-subtotal-label">Subtotal estimado</span>
+                <span class="cart-subtotal-amount" id="cart-subtotal-amount">$0</span>
+            </div>
+            <p class="cart-tax-notice">Envío e impuestos calculados al confirmar la orden.</p>
+            <div class="cart-actions">
+                <button type="button" class="btn-cart-empty" id="btn-cart-empty">Vaciar</button>
+                <button type="button" class="btn-cart-checkout" id="btn-cart-checkout">FINALIZAR PEDIDO</button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Scripts de renderizado dinámico y filtrado -->
+    <script type="module" src="js/views/productos.js"></script>
 </body>
 
 </html>
