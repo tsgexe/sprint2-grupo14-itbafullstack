@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mueblería Hermanos Jota - Muebles de calidad y diseño para tu hogar.">
+    <meta name="description" content="Mueblería Hermanos Jota - Muebles con historia creados para alimentar el alma. Piezas atemporales en maderas nativas y materiales nobles.">
     <title>Mueblería Hermanos Jota | Inicio</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,6 +36,14 @@
                     <li class="nav-item"><a href="productos.html" class="nav-link">Productos</a></li>
                     <li class="nav-item"><a href="contacto.html" class="nav-link">Contacto</a></li>
                 </ul>
+                <button class="btn-cart" id="btn-cart-toggle" aria-label="Abrir carrito">
+                    <svg class="cart-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    <span class="cart-badge" id="cart-badge">0</span>
+                </button>
             </nav>
         </div>
     </header>
@@ -62,70 +70,70 @@
             <div class="featured-container">
                 <header class="section-header">
                     <h2 id="featured-title" class="section-title">Productos Destacados</h2>
-                    <p class="section-subtitle">Piezas esenciales seleccionadas por su diseño y artesanía única</p>
+                    <p class="section-subtitle">Cada pieza cuenta la historia de manos expertas y materiales nobles</p>
                 </header>
 
                 <!-- Contenedor de 4 productos destacados -->
                 <div id="featured-products-grid" class="products-grid">
-                    <article class="product-card">
+                    <article class="product-card" data-id="uspallata">
                         <div class="product-image-container">
-                            <img src="assets/img/products/aconcagua.png" alt="Mesa de Noche Aconcagua en madera maciza"
-                                class="product-image">
+                            <img src="assets/img/products/uspallata.png" alt="Aparador Uspallata - Mueblería Hermanos Jota"
+                                class="product-image" loading="lazy">
                         </div>
                         <div class="product-content">
-                            <span class="product-category">Mesas</span>
-                            <span class="producto-tagline">Madera Certificada FSC • Hecho a Mano</span>
+                            <span class="product-category">Comedor</span>
+                            <span class="producto-tagline">Madera FSC®</span>
+                            <h3 class="product-title">Aparador Uspallata</h3>
+                            <p class="product-price">$850.000</p>
+                            <a href="producto.html?id=uspallata" class="product-link" aria-label="Ver detalle de Aparador Uspallata">
+                                Ver Detalle
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-id="aconcagua">
+                        <div class="product-image-container">
+                            <img src="assets/img/products/aconcagua.png" alt="Mesa de Noche Aconcagua - Mueblería Hermanos Jota"
+                                class="product-image" loading="lazy">
+                        </div>
+                        <div class="product-content">
+                            <span class="product-category">Dormitorio</span>
+                            <span class="producto-tagline">Madera FSC®</span>
                             <h3 class="product-title">Mesa de Noche Aconcagua</h3>
-                            <p class="product-price">$145.000</p>
-                            <a href="producto.html" class="product-link" aria-label="Ver detalle de Mesa de Noche Aconcagua">
+                            <p class="product-price">$768.000</p>
+                            <a href="producto.html?id=aconcagua" class="product-link" aria-label="Ver detalle de Mesa de Noche Aconcagua">
                                 Ver Detalle
                             </a>
                         </div>
                     </article>
 
-                    <article class="product-card">
+                    <article class="product-card" data-id="belgrano">
                         <div class="product-image-container">
-                            <img src="assets/img/products/araucaria.png" alt="Mesa de centro Araucaria en petiribí"
-                                class="product-image">
+                            <img src="assets/img/products/belgrano.png" alt="Silla de Trabajo Belgrano - Mueblería Hermanos Jota"
+                                class="product-image" loading="lazy">
                         </div>
                         <div class="product-content">
-                            <span class="product-category">Mesas</span>
-                            <span class="producto-tagline">Petiribí Macizo • Sello FSC</span>
-                            <h3 class="product-title">Mesa de Centro Araucaria</h3>
-                            <p class="product-price">$280.000</p>
-                            <a href="producto.html" class="product-link" aria-label="Ver detalle de Mesa de Centro Araucaria">
-                                Ver Detalle
-                            </a>
-                        </div>
-                    </article>
-
-                    <article class="product-card">
-                        <div class="product-image-container">
-                            <img src="assets/img/products/belgrano.png" alt="Silla de trabajo Belgrano en madera nativa"
-                                class="product-image">
-                        </div>
-                        <div class="product-content">
-                            <span class="product-category">Sillas</span>
-                            <span class="producto-tagline">Madera FSC • Acabado Natural</span>
+                            <span class="product-category">Estudio y Oficina</span>
+                            <span class="producto-tagline">Madera FSC® - Ergonomía europea EN 1335</span>
                             <h3 class="product-title">Silla de Trabajo Belgrano</h3>
-                            <p class="product-price">$320.000</p>
-                            <a href="producto.html" class="product-link" aria-label="Ver detalle de Silla de Trabajo Belgrano">
+                            <p class="product-price">$546.000</p>
+                            <a href="producto.html?id=belgrano" class="product-link" aria-label="Ver detalle de Silla de Trabajo Belgrano">
                                 Ver Detalle
                             </a>
                         </div>
                     </article>
 
-                    <article class="product-card">
+                    <article class="product-card" data-id="patagonia">
                         <div class="product-image-container">
                             <img src="assets/img/products/patagonia.png"
-                                alt="Sofá Patagonia de 3 cuerpos tapizado en lino" class="product-image">
+                                alt="Sofá Patagonia - Mueblería Hermanos Jota" class="product-image" loading="lazy">
                         </div>
                         <div class="product-content">
-                            <span class="product-category">Sofás</span>
-                            <span class="producto-tagline">Tapizado en Lino • Artesanal</span>
+                            <span class="product-category">Living</span>
+                            <span class="producto-tagline">Madera FSC®</span>
                             <h3 class="product-title">Sofá Patagonia</h3>
-                            <p class="product-price">$450.000</p>
-                            <a href="producto.html" class="product-link" aria-label="Ver detalle de Sofá Patagonia">
+                            <p class="product-price">$1.344.000</p>
+                            <a href="producto.html?id=patagonia" class="product-link" aria-label="Ver detalle de Sofá Patagonia">
                                 Ver Detalle
                             </a>
                         </div>
@@ -197,6 +205,32 @@
         </div>
     </footer>
 
+    <!-- Componente Global: Overlay y Drawer del Carrito -->
+    <div class="cart-overlay" id="cart-overlay" aria-hidden="true"></div>
+    <aside class="cart-drawer" id="cart-drawer" role="dialog" aria-labelledby="cart-drawer-title" aria-modal="true" aria-hidden="true">
+        <div class="cart-header">
+            <div class="cart-header-title-wrap">
+                <h2 id="cart-drawer-title" class="cart-title">Tu Selección</h2>
+                <span class="cart-header-count" id="cart-header-count">(0)</span>
+            </div>
+            <button type="button" class="cart-close-btn" id="btn-cart-close" aria-label="Cerrar carrito">&times;</button>
+        </div>
+        <div class="cart-items-container" id="cart-items-container"></div>
+        <div class="cart-footer" id="cart-footer">
+            <div class="cart-subtotal-row">
+                <span class="cart-subtotal-label">Subtotal estimado</span>
+                <span class="cart-subtotal-amount" id="cart-subtotal-amount">$0</span>
+            </div>
+            <p class="cart-tax-notice">Envío e impuestos calculados al confirmar la orden.</p>
+            <div class="cart-actions">
+                <button type="button" class="btn-cart-empty" id="btn-cart-empty">Vaciar</button>
+                <button type="button" class="btn-cart-checkout" id="btn-cart-checkout">FINALIZAR PEDIDO</button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Scripts de interactividad y renderizado de destacados -->
+    <script type="module" src="js/views/index.js"></script>
 </body>
 
 </html>
