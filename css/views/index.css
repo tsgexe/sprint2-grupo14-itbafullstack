@@ -144,7 +144,7 @@
    max-width: 100%;
 }
 
-/* Tablet (>= 576px): 2 columnas */
+/* Tablet (>= 576px): 2 columnas balanceadas (2x2) */
 @media (min-width: 576px) {
    .products-grid .product-card {
       flex: 1 1 calc(50% - 0.75rem);
@@ -152,7 +152,7 @@
    }
 }
 
-/* Desktop (>= 992px): 4 columnas alineadas horizontalmente */
+/* Desktop (>= 992px): 4 columnas alineadas horizontalmente en una sola fila */
 @media (min-width: 992px) {
    .products-grid .product-card {
       flex: 1 1 calc(25% - 1.125rem);
