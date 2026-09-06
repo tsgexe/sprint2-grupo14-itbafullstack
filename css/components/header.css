@@ -2,6 +2,8 @@
    Componente: Header (Mobile First)
    ========================================================================== */
 
+@import './cart.css';
+
 .main-header {
     position: sticky;
     top: 0;
@@ -55,8 +57,8 @@
     transition: color 0.2s ease;
 }
 
-.logo:hover .logo-text {
-    color: var(--color-vara-oro);
+.logo:hover {
+    opacity: 0.88;
 }
 
 .logo-circle {
@@ -78,12 +80,11 @@
     box-sizing: border-box;
 
     /* Transición suave para interactividad */
-    transition: transform 0.2s ease, border-color 0.2s ease;
+    transition: transform 0.2s ease;
 }
 
 .logo:hover .logo-circle {
     transform: scale(1.03);
-    border-color: var(--color-vara-oro);
 }
 
 /* ==========================================================================
@@ -92,6 +93,7 @@
 .main-nav {
     display: flex;
     align-items: center;
+    gap: clamp(0.75rem, 2vw, 1.5rem);
 }
 
 .nav-list {
