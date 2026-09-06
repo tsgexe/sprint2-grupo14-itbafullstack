@@ -10,11 +10,7 @@
    Estructura General y Contenedor
    ========================================================================== */
 .contact-page-main {
-<<<<<<< HEAD
     padding: clamp(1.5rem, 4vw, 3rem) clamp(1rem, 4vw, 2.5rem) clamp(3rem, 6vw, 5rem);
-=======
-    padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 4vw, 2.5rem) clamp(3rem, 6vw, 5rem);
->>>>>>> fca6ffcdebf7c9fc9fdd03e49097541edc86a0f6
     flex-grow: 1;
 }
 
@@ -25,7 +21,6 @@
 }
 
 /* ==========================================================================
-<<<<<<< HEAD
    Miga de Pan (Breadcrumbs)
    ========================================================================== */
 .breadcrumbs {
@@ -59,8 +54,6 @@
 }
 
 /* ==========================================================================
-=======
->>>>>>> fca6ffcdebf7c9fc9fdd03e49097541edc86a0f6
    Cabecera Editorial de la Sección de Contacto
    ========================================================================== */
 .contact-header {
@@ -246,7 +239,6 @@
         width: auto;
         min-width: 220px;
     }
-<<<<<<< HEAD
 }
 
 /* ==========================================================================
@@ -409,6 +401,4 @@
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(212, 164, 55, 0.25);
 }
-=======
 }
->>>>>>> fca6ffcdebf7c9fc9fdd03e49097541edc86a0f6
