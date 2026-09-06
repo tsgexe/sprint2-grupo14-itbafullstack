@@ -1,9 +1,12 @@
+@import '../variables.css';
+
 /* ==========================================================================
    Componente: Tarjeta de Producto (Product Card)
    ========================================================================== */
 
 .product-card {
-    position: relative; /* Contexto para el stretched-link de la tarjeta completa */
+    position: relative;
+    /* Contexto para el stretched-link de la tarjeta completa */
     display: flex;
     flex-direction: column;
     background-color: var(--color-blanco);
@@ -132,4 +135,42 @@
 .product-link:hover {
     color: var(--color-siena-tostado);
     background-size: 100% 1.5px;
+}
+
+/* ==========================================================================
+   Estado de Carga Asíncrona (Loader / Spinner Artesanal)
+   ========================================================================== */
+.catalog-loader {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 1.5rem;
+    gap: 1rem;
+    text-align: center;
+}
+
+.spinner-artesanal {
+    width: 46px;
+    height: 46px;
+    border: 3.5px solid rgba(160, 82, 45, 0.18);
+    border-top-color: var(--color-siena-tostado);
+    border-radius: 50%;
+    animation: spinArtesanal 0.8s linear infinite;
+}
+
+@keyframes spinArtesanal {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loader-text {
+    font-family: var(--font-primary);
+    font-size: 0.92rem;
+    color: var(--color-texto-oscuro);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    margin: 0;
 }
