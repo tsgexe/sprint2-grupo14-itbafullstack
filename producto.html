@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Detalle de producto - Mueblería Hermanos Jota.">
+    <meta name="description" content="Mesa de Noche Aconcagua en madera nativa certificada FSC y acabado en aceite de lino natural - Programa Herencia Viva - Mueblería Hermanos Jota.">
     <title>Mueblería Hermanos Jota | Producto</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,6 +35,14 @@
                     <li class="nav-item"><a href="productos.html" class="nav-link">Productos</a></li>
                     <li class="nav-item"><a href="contacto.html" class="nav-link">Contacto</a></li>
                 </ul>
+                <button class="btn-cart" id="btn-cart-toggle" aria-label="Abrir carrito">
+                    <svg class="cart-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    <span class="cart-badge" id="cart-badge">0</span>
+                </button>
             </nav>
         </div>
     </header>
@@ -88,24 +96,28 @@
                         <!-- Sección de Detalles y Especificaciones -->
                         <section class="product-block product-specs-block" aria-labelledby="specs-heading">
                             <h2 id="specs-heading" class="product-block-title">Detalles y Especificaciones</h2>
-                            <ul class="product-specs-list">
-                                <li class="spec-item">
-                                    <strong>Material:</strong> Petiribí macizo de fuentes sustentables con sello FSC.
-                                </li>
-                                <li class="spec-item">
-                                    <strong>Dimensiones:</strong> 50 cm (ancho) x 40 cm (profundidad) x 55 cm (alto).
-                                </li>
-                                <li class="spec-item">
-                                    <strong>Acabado:</strong> Laca poliuretánica mate ecológica al agua con protección
-                                    UV.
-                                </li>
-                                <li class="spec-item">
-                                    <strong>Origen:</strong> Hecho a mano en Casa Taller, San Cristóbal, Buenos Aires.
-                                </li>
-                                <li class="spec-item">
-                                    <strong>Garantía:</strong> 5 años en estructura y ensamble de carpintería artesanal.
-                                </li>
-                            </ul>
+                            <dl class="product-specs-dl" id="product-specs">
+                                <div class="spec-row">
+                                    <dt>Medidas:</dt>
+                                    <dd>45 x 35 x 60 cm</dd>
+                                </div>
+                                <div class="spec-row">
+                                    <dt>Materiales:</dt>
+                                    <dd>Roble macizo FSC®, herrajes soft-close</dd>
+                                </div>
+                                <div class="spec-row">
+                                    <dt>Acabado:</dt>
+                                    <dd>Aceite de lino 100% natural prensado en frío y cera de abejas de origen local certificado (Bajo COV)</dd>
+                                </div>
+                                <div class="spec-row">
+                                    <dt>Almacenamiento:</dt>
+                                    <dd>1 cajón + repisa inferior</dd>
+                                </div>
+                                <div class="spec-row spec-warranty">
+                                    <dt>Garantía:</dt>
+                                    <dd>Programa Herencia Viva — 10 años en estructura y 5 años en acabados. Incluye servicio de restauración y hasta 40% en recompra garantizada.</dd>
+                                </div>
+                            </dl>
                         </section>
 
                         <!-- Acciones y Botón de Compra -->
@@ -116,15 +128,21 @@
                                     max="10" aria-label="Cantidad de unidades">
                             </div>
                             <button type="button" class="btn-primary btn-purchase" id="btn-buy"
-                                aria-label="Comprar Mesa de Noche Aconcagua">
-                                Comprar Ahora
+                                aria-label="Añadir Mesa de Noche Aconcagua al carrito">
+                                Añadir al Carrito
                             </button>
                         </div>
 
                         <!-- Nota de Envío y Confianza -->
                         <footer class="product-shipping-note">
                             <p class="text-note">
-                                🚚 Envíos asegurados a todo el país • Embalaje especial para piezas de diseño
+                                <svg class="shipping-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <rect x="1" y="3" width="15" height="13"></rect>
+                                    <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                                    <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                                    <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                                </svg>
+                                <span>Envíos asegurados a todo el país • Embalaje especial para piezas de diseño</span>
                             </p>
                         </footer>
                     </div>
@@ -195,6 +213,32 @@
         </div>
     </footer>
 
+    <!-- Componente Global: Overlay y Drawer del Carrito -->
+    <div class="cart-overlay" id="cart-overlay" aria-hidden="true"></div>
+    <aside class="cart-drawer" id="cart-drawer" role="dialog" aria-labelledby="cart-drawer-title" aria-modal="true" aria-hidden="true">
+        <div class="cart-header">
+            <div class="cart-header-title-wrap">
+                <h2 id="cart-drawer-title" class="cart-title">Tu Selección</h2>
+                <span class="cart-header-count" id="cart-header-count">(0)</span>
+            </div>
+            <button type="button" class="cart-close-btn" id="btn-cart-close" aria-label="Cerrar carrito">&times;</button>
+        </div>
+        <div class="cart-items-container" id="cart-items-container"></div>
+        <div class="cart-footer" id="cart-footer">
+            <div class="cart-subtotal-row">
+                <span class="cart-subtotal-label">Subtotal estimado</span>
+                <span class="cart-subtotal-amount" id="cart-subtotal-amount">$0</span>
+            </div>
+            <p class="cart-tax-notice">Envío e impuestos calculados al confirmar la orden.</p>
+            <div class="cart-actions">
+                <button type="button" class="btn-cart-empty" id="btn-cart-empty">Vaciar</button>
+                <button type="button" class="btn-cart-checkout" id="btn-cart-checkout">FINALIZAR PEDIDO</button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Scripts de interactividad y renderizado dinámico -->
+    <script type="module" src="js/views/producto.js"></script>
 </body>
 
 </html>
