@@ -9,6 +9,7 @@ import '../modules/cart.js';
 document.addEventListener('DOMContentLoaded', () => {
   renderProductosDestacados();
   initHeritageCarousel();
+  initHeroParallax();
 });
 
 /**
@@ -192,3 +193,42 @@ function initHeritageCarousel() {
   updateCarousel();
 }
 
+/**
+ * Efecto Parallax en el Hero Banner
+ * Desplaza la imagen de fondo con velocidad relativa al scroll vertical.
+ * Optimizado con requestAnimationFrame y cálculo limitado al rango visible.
+ */
+function initHeroParallax() {
+  const heroBanner = document.querySelector('.hero-banner');
+  const heroBg = document.getElementById('hero-bg-parallax');
+
+  if (!heroBanner || !heroBg) return;
+
+  // Respeto de accesibilidad
+  const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (motionQuery.matches) return;
+
+  let ticking = false;
+
+  function updateParallax() {
+    const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+    const bannerHeight = heroBanner.offsetHeight;
+
+    // Solo actualizar mientras el banner esté visible en el viewport
+    if (scrollY <= bannerHeight) {
+      const offset = scrollY * 0.35;
+      heroBg.style.transform = `translate3d(0, ${offset.toFixed(1)}px, 0)`;
+    }
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(updateParallax);
+      ticking = true;
+    }
+  }, { passive: true });
+
+  // Posicionamiento inicial ante recarga con scroll persistido
+  updateParallax();
+}
