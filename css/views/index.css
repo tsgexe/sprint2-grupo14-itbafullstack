@@ -159,3 +159,478 @@
       max-width: calc(25% - 1.125rem);
    }
 }
+
+/* ==========================================================================
+   Sección: Compromiso Artesanal / Pilares de Marca
+   ========================================================================== */
+.home-features {
+   padding: clamp(3.5rem, 6vw, 5.5rem) clamp(1rem, 4vw, 2.5rem);
+   background-color: rgba(239, 236, 230, 0.4);
+   border-top: 1px solid rgba(45, 36, 34, 0.08);
+}
+
+.features-container {
+   width: 100%;
+   max-width: 1200px;
+   margin: 0 auto;
+   display: flex;
+   flex-direction: column;
+   gap: clamp(2rem, 4vw, 3rem);
+}
+
+.features-grid {
+   display: flex;
+   flex-direction: column;
+   gap: 1.5rem;
+   width: 100%;
+}
+
+.feature-card {
+   flex: 1;
+   background-color: var(--color-blanco);
+   border: 1px solid rgba(45, 36, 34, 0.08);
+   border-radius: 4px;
+   padding: 2rem 1.5rem;
+   text-align: center;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 0.6rem;
+   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.feature-card:hover {
+   transform: translateY(-4px);
+   box-shadow: 0 10px 24px rgba(45, 36, 34, 0.08);
+   border-color: rgba(160, 82, 45, 0.25);
+}
+
+.feature-icon-wrapper {
+   width: 54px;
+   height: 54px;
+   border-radius: 50%;
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   margin-bottom: 0.35rem;
+   transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-icon-salvia {
+   background-color: rgba(107, 127, 110, 0.12);
+   color: var(--color-verde-salvia);
+}
+
+.feature-icon-siena {
+   background-color: rgba(196, 90, 56, 0.12);
+   color: var(--color-siena-tostado);
+}
+
+.feature-icon-oro {
+   background-color: rgba(212, 163, 89, 0.16);
+   color: var(--color-vara-oro);
+}
+
+.feature-card:hover .feature-icon-wrapper {
+   transform: scale(1.1);
+}
+
+.feature-title {
+   font-family: var(--font-secondary);
+   font-size: 1.15rem;
+   font-weight: 700;
+   color: var(--color-siena-tostado);
+   text-transform: uppercase;
+   letter-spacing: 0.08em;
+   margin: 0;
+}
+
+.feature-description {
+   font-family: var(--font-primary);
+   font-size: 0.9rem;
+   color: var(--color-texto-oscuro);
+   line-height: 1.6;
+   font-weight: 300;
+   margin: 0;
+}
+
+@media (min-width: 768px) {
+   .features-grid {
+      flex-direction: row;
+   }
+}
+
+/* ==========================================================================
+   Sección: Programa Herencia Viva
+   ========================================================================== */
+.heritage-section {
+   padding: clamp(3.5rem, 6vw, 6rem) clamp(1rem, 4vw, 2.5rem);
+   background-color: var(--color-blanco);
+   border-top: 1px solid rgba(45, 36, 34, 0.08);
+}
+
+.heritage-container {
+   width: 100%;
+   max-width: 1200px;
+   margin: 0 auto;
+   display: flex;
+   flex-direction: column;
+   gap: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.heritage-header {
+   text-align: center;
+   max-width: 680px;
+   margin: 0 auto;
+}
+
+.heritage-tagline {
+   font-family: var(--font-primary);
+   font-size: 0.8rem;
+   font-weight: 600;
+   text-transform: uppercase;
+   letter-spacing: 0.12em;
+   color: var(--color-siena-tostado);
+   margin-bottom: 0.25rem;
+   display: inline-block;
+}
+
+/* Contenedor del Carrusel */
+.heritage-carousel {
+   position: relative;
+   width: 100%;
+   max-width: 980px;
+   margin: 0 auto;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 1.5rem 0 2rem;
+}
+
+/* Escenario / Stage donde coexisten las tarjetas en Foco */
+.heritage-carousel-stage {
+   position: relative;
+   width: 100%;
+   height: 270px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+/* Tarjeta Base */
+.heritage-card {
+   position: absolute;
+   width: min(440px, 80%);
+   background-color: var(--color-blanco);
+   border: 1px solid rgba(45, 36, 34, 0.1);
+   border-radius: 8px;
+   padding: 1.75rem 1.6rem;
+   display: flex;
+   align-items: flex-start;
+   gap: 1.25rem;
+   box-sizing: border-box;
+   user-select: none;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   backface-visibility: hidden;
+   transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1),
+               opacity 0.45s ease,
+               filter 0.45s ease,
+               box-shadow 0.45s ease,
+               border-color 0.45s ease;
+}
+
+/* Estado Activo: Central, 100% nítido a escala real (sin distorsión de pixeles) */
+.heritage-card.is-active {
+   transform: translate3d(0, 0, 0);
+   z-index: 10;
+   opacity: 1;
+   filter: none;
+   box-shadow: 0 16px 36px rgba(45, 36, 34, 0.12);
+   border-color: var(--color-siena-tostado);
+   cursor: default;
+   pointer-events: auto;
+}
+
+/* Estado Previo: A la izquierda, difuminado y a menor escala */
+.heritage-card.is-prev {
+   transform: translate3d(-56%, 0, 0) scale(0.85);
+   z-index: 5;
+   opacity: 0.42;
+   filter: blur(2px);
+   cursor: pointer;
+   pointer-events: auto;
+}
+
+/* Estado Siguiente: A la derecha, difuminado y a menor escala */
+.heritage-card.is-next {
+   transform: translate3d(56%, 0, 0) scale(0.85);
+   z-index: 5;
+   opacity: 0.42;
+   filter: blur(2px);
+   cursor: pointer;
+   pointer-events: auto;
+}
+
+.heritage-card.is-prev:hover,
+.heritage-card.is-next:hover {
+   opacity: 0.72;
+   filter: blur(0.5px);
+}
+
+/* Tarjetas en cola fuera de la vista */
+.heritage-card.is-hidden-left {
+   transform: translateX(-110%) scale(0.75);
+   z-index: 1;
+   opacity: 0;
+   filter: blur(4px);
+   pointer-events: none;
+}
+
+.heritage-card.is-hidden-right {
+   transform: translateX(110%) scale(0.75);
+   z-index: 1;
+   opacity: 0;
+   filter: blur(4px);
+   pointer-events: none;
+}
+
+/* Botones Flecha de Navegación */
+.carousel-nav-btn {
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   z-index: 25;
+   width: 46px;
+   height: 46px;
+   border-radius: 50%;
+   background-color: var(--color-blanco);
+   border: 1.5px solid var(--color-siena-tostado);
+   color: var(--color-siena-tostado);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   cursor: pointer;
+   box-shadow: 0 6px 16px rgba(45, 36, 34, 0.1);
+   transition: background-color 0.2s ease,
+               color 0.2s ease,
+               transform 0.2s ease,
+               box-shadow 0.2s ease;
+}
+
+.carousel-btn-prev {
+   left: 6px;
+}
+
+.carousel-btn-next {
+   right: 6px;
+}
+
+.carousel-nav-btn:hover {
+   background-color: var(--color-siena-tostado);
+   color: var(--color-blanco);
+   transform: translateY(-50%) scale(1.08);
+   box-shadow: 0 8px 20px rgba(196, 90, 56, 0.28);
+}
+
+.carousel-nav-btn:active {
+   transform: translateY(-50%) scale(0.95);
+}
+
+.carousel-nav-btn:focus-visible {
+   outline: 2px solid var(--color-siena-tostado);
+   outline-offset: 3px;
+}
+
+/* Iconos de las Tarjetas */
+.heritage-icon-wrapper {
+   width: 50px;
+   height: 50px;
+   min-width: 50px;
+   border-radius: 50%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   transition: transform 0.3s ease;
+}
+
+.heritage-card.is-active .heritage-icon-wrapper {
+   transform: scale(1.05);
+}
+
+.heritage-icon-oro {
+   background-color: rgba(212, 163, 89, 0.16);
+   color: var(--color-vara-oro);
+}
+
+.heritage-icon-siena {
+   background-color: rgba(196, 90, 56, 0.12);
+   color: var(--color-siena-tostado);
+}
+
+.heritage-icon-salvia {
+   background-color: rgba(107, 127, 110, 0.12);
+   color: var(--color-verde-salvia);
+}
+
+/* Contenido de la Tarjeta */
+.heritage-content {
+   display: flex;
+   flex-direction: column;
+   gap: 0.35rem;
+}
+
+.heritage-badge {
+   font-family: var(--font-primary);
+   font-size: 0.72rem;
+   font-weight: 600;
+   text-transform: uppercase;
+   letter-spacing: 0.08em;
+   color: var(--color-siena-tostado);
+   background-color: rgba(196, 90, 56, 0.1);
+   padding: 0.2rem 0.55rem;
+   border-radius: 999px;
+   display: inline-block;
+   width: fit-content;
+}
+
+.heritage-item-title {
+   font-family: var(--font-secondary);
+   font-size: 1.12rem;
+   font-weight: 700;
+   color: var(--color-texto-oscuro);
+   margin: 0;
+   letter-spacing: 0.02em;
+}
+
+.heritage-item-desc {
+   font-family: var(--font-primary);
+   font-size: 0.88rem;
+   color: var(--color-texto-oscuro);
+   line-height: 1.55;
+   font-weight: 300;
+   margin: 0;
+}
+
+/* Indicadores / Dots */
+.heritage-dots {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 0.6rem;
+   margin-top: 0.5rem;
+}
+
+.heritage-dot {
+   width: 10px;
+   height: 10px;
+   border-radius: 999px;
+   border: none;
+   background-color: rgba(45, 36, 34, 0.22);
+   cursor: pointer;
+   padding: 0;
+   transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.heritage-dot.active {
+   width: 28px;
+   background-color: var(--color-siena-tostado);
+}
+
+.heritage-dot:hover:not(.active) {
+   background-color: rgba(45, 36, 34, 0.45);
+}
+
+.heritage-dot:focus-visible {
+   outline: 2px solid var(--color-siena-tostado);
+   outline-offset: 2px;
+}
+
+/* Responsive Móvil */
+@media (max-width: 640px) {
+   .heritage-carousel {
+      padding: 1rem 0;
+   }
+
+   .heritage-carousel-stage {
+      height: 300px;
+   }
+
+   .heritage-card {
+      width: 86%;
+      padding: 1.4rem 1.15rem;
+      gap: 0.9rem;
+   }
+
+   .heritage-card.is-prev {
+      transform: translate3d(-76%, 0, 0) scale(0.84);
+      opacity: 0.25;
+      filter: blur(2.5px);
+   }
+
+   .heritage-card.is-next {
+      transform: translate3d(76%, 0, 0) scale(0.84);
+      opacity: 0.25;
+      filter: blur(2.5px);
+   }
+
+   .carousel-nav-btn {
+      width: 40px;
+      height: 40px;
+   }
+
+   .carousel-btn-prev {
+      left: 0;
+   }
+
+   .carousel-btn-next {
+      right: 0;
+   }
+}
+
+.heritage-cta {
+   text-align: center;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 1rem;
+   padding-top: 1rem;
+   border-top: 1px dashed rgba(45, 36, 34, 0.12);
+}
+
+.heritage-cta-text {
+   font-family: var(--font-primary);
+   font-size: 0.95rem;
+   color: var(--color-texto-oscuro);
+   margin: 0;
+}
+
+.btn-secondary {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   padding: 0.75rem 1.6rem;
+   border: 1.5px solid var(--color-siena-tostado);
+   color: var(--color-siena-tostado);
+   background-color: transparent;
+   border-radius: 999px;
+   font-family: var(--font-primary);
+   font-size: 0.85rem;
+   font-weight: 600;
+   text-transform: uppercase;
+   letter-spacing: 0.08em;
+   text-decoration: none;
+   cursor: pointer;
+   transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-secondary:hover {
+   background-color: var(--color-siena-tostado);
+   color: var(--color-blanco);
+   transform: translateY(-2px);
+   box-shadow: 0 4px 12px rgba(196, 90, 56, 0.25);
+}
+
+.btn-secondary:active {
+   transform: translateY(0);
+}
