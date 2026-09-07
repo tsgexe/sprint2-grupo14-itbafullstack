@@ -171,22 +171,65 @@ function initHeritageCarousel() {
     }
   });
 
-  // Soporte de gestos táctiles (Swipe en dispositivos móviles)
+  // Soporte de gestos táctiles optimizado (Swipe sin desvío de la página)
   let touchStartX = 0;
+  let touchStartY = 0;
   let touchEndX = 0;
+  let touchEndY = 0;
+  let isHorizontalSwipe = false;
 
   stage.addEventListener('touchstart', (e) => {
-    touchStartX = e.changedTouches[0].screenX;
+    if (e.touches.length !== 1) return;
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+    touchEndX = touchStartX;
+    touchEndY = touchStartY;
+    isHorizontalSwipe = false;
   }, { passive: true });
 
-  stage.addEventListener('touchend', (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-    const swipeDistance = touchStartX - touchEndX;
-    if (swipeDistance > 45) {
-      irSiguiente();
-    } else if (swipeDistance < -45) {
-      irAnterior();
+  stage.addEventListener('touchmove', (e) => {
+    if (e.touches.length !== 1) return;
+    touchEndX = e.touches[0].clientX;
+    touchEndY = e.touches[0].clientY;
+
+    const deltaX = Math.abs(touchEndX - touchStartX);
+    const deltaY = Math.abs(touchEndY - touchStartY);
+
+    // Si el usuario desliza horizontalmente sobre el carrusel, evitamos que la página se desplace
+    if (deltaX > deltaY && deltaX > 8) {
+      isHorizontalSwipe = true;
+      if (e.cancelable) {
+        e.preventDefault();
+      }
     }
+  }, { passive: false });
+
+  stage.addEventListener('touchend', (e) => {
+    const swipeDistance = touchStartX - touchEndX;
+    const threshold = 35; // Umbral táctil calibrado para respuesta inmediata
+
+    if (isHorizontalSwipe || Math.abs(swipeDistance) >= threshold) {
+      if (swipeDistance > threshold) {
+        irSiguiente();
+      } else if (swipeDistance < -threshold) {
+        irAnterior();
+      }
+    }
+
+    // Resetear coordenadas
+    touchStartX = 0;
+    touchStartY = 0;
+    touchEndX = 0;
+    touchEndY = 0;
+    isHorizontalSwipe = false;
+  }, { passive: true });
+
+  stage.addEventListener('touchcancel', () => {
+    touchStartX = 0;
+    touchStartY = 0;
+    touchEndX = 0;
+    touchEndY = 0;
+    isHorizontalSwipe = false;
   }, { passive: true });
 
   // Render inicial

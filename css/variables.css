@@ -19,6 +19,11 @@
     padding: 0;
 }
 
+html {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 body {
     background-color: var(--color-alabastro-calido);
     color: var(--color-texto-oscuro);
@@ -28,6 +33,9 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    max-width: 100%;
+    overflow-x: hidden;
+    position: relative;
 }
 
 /* Tipografía y Color para Encabezados (Manual 2026) */
