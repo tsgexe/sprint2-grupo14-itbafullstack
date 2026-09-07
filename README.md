@@ -70,4 +70,4 @@ Detalle del stack tecnológico implementado en el desarrollo:
        open index.html
        ```
        
-    * **Recomendación (Live Server):** Recomendamos ejecutarlo mediante la extensión **Live Server** en Visual Studio Code o Cursor IDE. Solo haz clic derecho sobre `index.html` y selecciona **"Open with Live Server"** (o presiona el botón **"Go Live"** en la barra inferior).
+    * **Recomendación (Live Server):** Recomendamos ejecutarlo mediante la extensión **Live Server** en Visual Studio Code o Cursor IDE. Solo hace clic derecho sobre `index.html` y selecciona **"Open with Live Server"** (o presiona el botón **"Go Live"** en la barra inferior).
